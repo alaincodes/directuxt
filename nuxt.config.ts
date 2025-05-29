@@ -5,21 +5,31 @@ export default defineNuxtConfig({
 	compatibilityDate: "2025-05-15",
 	devtools: { enabled: true },
 	runtimeConfig: {
-    public: {
-      API_URL: process.env.NUXT_API_URL
-    }
-  },
+		public: {
+			siteUrl: process.env.NUXT_PUBLIC_SITE_URL as string,
+			directusUrl: process.env.DIRECTUS_URL as string,
+		},
+	},
 	future: {
 		compatibilityVersion: 4,
+	},
+	// Image Configuration - https://image.nuxt.com/providers/directus
+	image: {
+		providers: {
+			directus: {
+				provider: "directus",
+				options: {
+					baseURL: `${process.env.DIRECTUS_URL}/assets/`,
+				},
+			},
+			local: {
+				provider: "ipx",
+			},
+		},
 	},
 	css: ["~/assets/css/main.css"],
 	vite: {
 		plugins: [tailwindcss()],
 	},
-	modules: [
-		"@nuxt/eslint",
-		"@nuxt/icon",
-		"@nuxt/image",
-		"@pinia/nuxt",
-	],
+	modules: ["@nuxt/eslint", "@nuxt/icon", "@nuxt/image", "@pinia/nuxt"],
 });
