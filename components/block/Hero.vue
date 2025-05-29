@@ -7,6 +7,7 @@ const { data: hero } = await useAsyncData('block_hero', () => {
   }))
 })
 
+console.log(hero.value)
 </script>
 
 <template>
@@ -14,7 +15,7 @@ const { data: hero } = await useAsyncData('block_hero', () => {
     <h1>{{ hero[0].title }}</h1>
     <p>{{ hero[0].description }}</p>
 
-    <SharedDirectusImage
+    <DirectusImage
       :uuid="hero[0].image"
       :alt="'Hero Image'"
       :fill="true"

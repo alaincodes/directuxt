@@ -16,7 +16,7 @@ console.log(pages.value)
 
 <template>
   <div>
-    <BlockHero />
+    <Hero />
     <pre v-for="page in pages" :key="page">{{ page }}</pre>
 
     <button class="btn btn-primary">daisy</button>
