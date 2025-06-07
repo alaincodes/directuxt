@@ -7,7 +7,7 @@ const { data: hero } = await useAsyncData('block_hero', () => {
   }))
 })
 
-console.log(hero.value)
+// console.log(hero.value)
 </script>
 
 <template>
@@ -17,7 +17,7 @@ console.log(hero.value)
 
     <DirectusImage
       :uuid="hero[0].image"
-      :alt="'Hero Image'"
+      :alt="hero[0].title"
       :fill="true"
       class="object-contain"
     />

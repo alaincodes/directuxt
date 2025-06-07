@@ -7,11 +7,6 @@ const { data: pages } = await useAsyncData('pages', () => {
   }))
 })
 
-// const { data: posts } = await useAsyncData('posts', () => {
-//   return $directus.request($readItems('posts'))
-// })
-
-console.log(pages.value)
 </script>
 
 <template>

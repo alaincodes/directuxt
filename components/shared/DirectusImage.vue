@@ -26,5 +26,5 @@ watch(
 </script>
 
 <template>
-	<img :src="src" v-bind="{ ...props, uuid: undefined }" />
+	<NuxtPicture :src="src" v-bind="{ ...props, uuid: undefined }" />
 </template>

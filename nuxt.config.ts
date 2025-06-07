@@ -12,9 +12,9 @@ export default defineNuxtConfig({
 	],
 	devtools: { enabled: true },
 	runtimeConfig: {
+		directusUrl: "",
 		public: {
-			siteUrl: process.env.NUXT_PUBLIC_SITE_URL as string,
-			directusUrl: process.env.DIRECTUS_URL as string,
+			siteUrl: "",
 		},
 	},
 	future: {
@@ -26,7 +26,7 @@ export default defineNuxtConfig({
 			directus: {
 				provider: "directus",
 				options: {
-					baseURL: `${process.env.DIRECTUS_URL}/assets/`,
+					baseURL: `${process.env.NUXT_PUBLIC_DIRECTUS_URL}/assets/`,
 				},
 			},
 			local: {
